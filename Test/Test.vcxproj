@@ -169,9 +169,6 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Demo\Demo.vcxproj">
-      <Project>{417075ec-aaf3-4305-b1d4-3006273801f6}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Solver\Solver.vcxproj">
       <Project>{ee2cc739-3a25-4e2f-9353-d51696a9b2b5}</Project>
     </ProjectReference>
