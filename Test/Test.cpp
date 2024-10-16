@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
 #include "..\Solver\Queue.h"
+#include "..\ClassTest\Vector.h"
+#include "..\ClassTest\Point.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -240,5 +242,117 @@ namespace Tests
 			queue3.dequeue();
 			Assert::AreEqual(queue1.peek(), queue3.peek());
 		}
+
+		TEST_METHOD(EnqueueVector_ValidData_Success)
+		{
+			Queue::Queue<Vector::Vector> queue;
+			Point::Point a(0, 0, 0);
+			Point::Point b(1,1,1);
+			Vector::Vector vector(a, b);
+			queue.enqueue(vector);
+			Assert::IsTrue(queue.peek() == vector);
+		}
+
+		TEST_METHOD(DequeueVector_ValidData_Success)
+		{
+			Point::Point a1(0, 0, 0);
+			Point::Point b1(1, 1, 1);
+			Vector::Vector vector1(a1,b1);
+			Point::Point a2(0, 0, 0);
+			Point::Point b2(1, 1, 1);
+			Vector::Vector vector2(a2,b2);
+			Point::Point a3(0, 0, 0);
+			Point::Point b3(1, 1, 1);
+			Vector::Vector vector3(a3,b3);
+			Queue::Queue<Vector::Vector> queue{ vector1,vector2,vector3 };
+			queue.dequeue();
+			Assert::IsTrue(queue.peek() == vector2);
+		}
+
+		TEST_METHOD(СopyСonstructorVector_ValidData_Success)
+		{
+			Point::Point a1(0, 0, 0);
+			Point::Point b1(1, 1, 1);
+			Vector::Vector vector1(a1, b1);
+			Point::Point a2(0, 0, 0);
+			Point::Point b2(1, 1, 1);
+			Vector::Vector vector2(a2, b2);
+			Point::Point a3(0, 0, 0);
+			Point::Point b3(1, 1, 1);
+			Vector::Vector vector3(a3, b3);
+			Queue::Queue<Vector::Vector> queue1{ vector1,vector2,vector3 }, queue2(queue1);
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+			queue1.dequeue();
+			queue2.dequeue();
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+			queue1.dequeue();
+			queue2.dequeue();
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+		}
+
+		TEST_METHOD(MoveConstructorVector_ValidData_Success)
+		{
+			Point::Point a1(0, 0, 0);
+			Point::Point b1(1, 1, 1);
+			Vector::Vector vector1(a1, b1);
+			Point::Point a2(0, 0, 0);
+			Point::Point b2(1, 1, 1);
+			Vector::Vector vector2(a2, b2);
+			Point::Point a3(0, 0, 0);
+			Point::Point b3(1, 1, 1);
+			Vector::Vector vector3(a3, b3);
+			Queue::Queue<Vector::Vector> queue1{ vector1,vector2,vector3 }, queue2 = queue1, queue3(std::move(queue2));
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+			queue1.dequeue();
+			queue3.dequeue();
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+			queue1.dequeue();
+			queue3.dequeue();
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+		}
+
+		TEST_METHOD(OperatorEqualCopyingVector_ValidData_Success)
+		{
+			Point::Point a1(0, 0, 0);
+			Point::Point b1(1, 1, 1);
+			Vector::Vector vector1(a1, b1);
+			Point::Point a2(0, 0, 0);
+			Point::Point b2(1, 1, 1);
+			Vector::Vector vector2(a2, b2);
+			Point::Point a3(0, 0, 0);
+			Point::Point b3(1, 1, 1);
+			Vector::Vector vector3(a3, b3);
+			Queue::Queue<Vector::Vector> queue1{ vector1,vector2,vector3 }, queue2 = queue1;
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+			queue1.dequeue();
+			queue2.dequeue();
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+			queue1.dequeue();
+			queue2.dequeue();
+			Assert::IsTrue(queue1.peek() == queue2.peek());
+		}
+
+		TEST_METHOD(OperatorEqualMovingVector_ValidData_Success)
+		{
+
+			Point::Point a1(0, 0, 0);
+			Point::Point b1(1, 1, 1);
+			Vector::Vector vector1(a1, b1);
+			Point::Point a2(0, 0, 0);
+			Point::Point b2(1, 1, 1);
+			Vector::Vector vector2(a2, b2);
+			Point::Point a3(0, 0, 0);
+			Point::Point b3(1, 1, 1);
+			Vector::Vector vector3(a3, b3);
+			Queue::Queue<Vector::Vector> queue1{ vector1,vector2,vector3 }, queue2 = queue1, queue3(std::move(queue2));
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+			queue1.dequeue();
+			queue3.dequeue();
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+			queue1.dequeue();
+			queue3.dequeue();
+			Assert::IsTrue(queue1.peek() == queue3.peek());
+		}
+		
 	};
 }

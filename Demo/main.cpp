@@ -1,5 +1,7 @@
 #include <iostream>
 #include "..\Solver\Queue.h"
+#include "..\ClassTest\Point.h"
+#include "..\ClassTest\Vector.h"
 
 int main()
 {
@@ -16,5 +18,10 @@ int main()
 	Queue::Queue<int> queue2 = std::move(list2);
 	std::cout << queue1 << std::endl << queue2 << std::endl;
 	std::cout << list1 << std::endl << list2 << std::endl;
+
+
+	Point::Point a(0, 0, 0);
+	Point::Point b(1, 1, 1);
+	Vector::Vector vector(a, b);
 	return 0;
 }
