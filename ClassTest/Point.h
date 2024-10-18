@@ -6,39 +6,39 @@ namespace Point
 	struct Point
 	{
 		/**
-		*@breaf Абсцисса точки.
+		*@breaf СР±СЃС†РёСЃСЃР° С‚РѕС‡РєРё.
 		*/
 		double x = 0;
 		/**
-		*@breaf Ордината точки.
+		*@breaf СњСЂРґРёРЅР°С‚Р° С‚РѕС‡РєРё.
 		*/
 		double y = 0;
 		/**
-		*@breaf Аппликата точки.
+		*@breaf СРїРїР»РёРєР°С‚Р° С‚РѕС‡РєРё.
 		*/
 		double z = 0;
 
 		/**
-		*@breaf Создает экземляр класса Point.
-		*@param Абсцисса точки.
-		*@param Ордината точки.
-		*@param Аппликата точки.
+		*@breaf вЂ”РѕР·РґР°РµС‚ СЌРєР·РµРјР»В¤СЂ РєР»Р°СЃСЃР° Point.
+		*@param СР±СЃС†РёСЃСЃР° С‚РѕС‡РєРё.
+		*@param СњСЂРґРёРЅР°С‚Р° С‚РѕС‡РєРё.
+		*@param СРїРїР»РёРєР°С‚Р° С‚РѕС‡РєРё.
 		*/
 		Point(const double abscissa = 0, const double ordinate = 0, const double applicate = 0);
 		/*
-		*@brief оператор "==" для класса Point.
+		*@brief РѕРїРµСЂР°С‚РѕСЂ "==" РґР»В¤ РєР»Р°СЃСЃР° Point.
 		*/
 		bool operator == (const Point& point)const;
 		/*
-		*@brief оператор "!=" для класса Point.
+		*@brief РѕРїРµСЂР°С‚РѕСЂ "!=" РґР»В¤ РєР»Р°СЃСЃР° Point.
 		*/
 		bool operator != (const Point& point)const;
 		/*
-		*@brief оператор "<<" для класса Point.
+		*@brief РѕРїРµСЂР°С‚РѕСЂ "<<" РґР»В¤ РєР»Р°СЃСЃР° Point.
 		*/
 		friend std::ostream& operator<<(std::ostream& output, const Point& point);
 		/*
-		*@brief оператор ">>" для класса Point.
+		*@brief РѕРїРµСЂР°С‚РѕСЂ ">>" РґР»В¤ РєР»Р°СЃСЃР° Point.
 		*/
 		friend std::istream& operator>>(std::istream& input, Point& point);
 
