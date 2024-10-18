@@ -6,7 +6,7 @@ namespace Vector
 	{
 	private:
 		/*
-		*@brief Вектор
+		*@brief Вектор.
 		*/
 		Point::Point vector;
 
