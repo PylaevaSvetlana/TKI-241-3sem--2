@@ -9,10 +9,18 @@ namespace Queue
 
 	/**
 	* @brief - Оператор сдвига влево.
+	* @tparam T Тип данных очереди.
+	* @param output Поток вывода.
+	* @param queue Очередь.
+	* @return Изменённый поток вывода.
 	*/
 	template<typename T>
 	std::ostream& operator << (std::ostream& output, const Queue<T>& queue);
 
+	/**
+	* @brief Класс очередь.
+	* @tparam T Тип данных очереди.
+	*/
 	template<typename T>
 	class Queue
 	{
