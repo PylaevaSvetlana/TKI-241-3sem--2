@@ -1,5 +1,4 @@
 #include "Vector.h"
-#include "cmath"
 
 Vector::Vector::Vector(const Point::Point& start, const Point::Point& end)
 {

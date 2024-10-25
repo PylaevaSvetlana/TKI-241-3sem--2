@@ -6,39 +6,39 @@ namespace Point
 	struct Point
 	{
 		/**
-		*@breaf Абсцисса точки.
+		*@breaf јбсцисса точки.
 		*/
 		double x = 0;
 		/**
-		*@breaf Ордината точки.
+		*@breaf ќрдината точки.
 		*/
 		double y = 0;
 		/**
-		*@breaf Аппликата точки.
+		*@breaf јппликата точки.
 		*/
 		double z = 0;
 
 		/**
-		*@breaf Создает экземляр класса Point.
-		*@param Абсцисса точки.
-		*@param Ордината точки.
-		*@param Аппликата точки.
+		*@breaf —оздает экземл¤р класса Point.
+		*@param јбсцисса точки.
+		*@param ќрдината точки.
+		*@param јппликата точки.
 		*/
 		Point(const double abscissa = 0, const double ordinate = 0, const double applicate = 0);
 		/*
-		*@brief оператор "==" для класса Point.
+		*@brief оператор "==" дл¤ класса Point.
 		*/
 		bool operator == (const Point& point)const;
 		/*
-		*@brief оператор "!=" для класса Point.
+		*@brief оператор "!=" дл¤ класса Point.
 		*/
 		bool operator != (const Point& point)const;
 		/*
-		*@brief оператор "<<" для класса Point.
+		*@brief оператор "<<" дл¤ класса Point.
 		*/
 		friend std::ostream& operator<<(std::ostream& output, const Point& point);
 		/*
-		*@brief оператор ">>" для класса Point.
+		*@brief оператор ">>" дл¤ класса Point.
 		*/
 		friend std::istream& operator>>(std::istream& input, Point& point);
 

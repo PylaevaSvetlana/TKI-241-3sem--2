@@ -88,6 +88,12 @@ namespace Tests
 			Assert::AreEqual(queue1.peek(), queue3.peek());
 		}
 
+		TEST_METHOD(IsEmptyInt_ValidData_Success)
+		{
+			Queue::Queue<int> queue;
+			Assert::IsTrue(queue.IsEmpty());
+		}
+
 		TEST_METHOD(EnqueueDouble_ValidData_Success)
 		{
 			Queue::Queue<double> queue;
@@ -162,6 +168,12 @@ namespace Tests
 			queue1.dequeue();
 			queue3.dequeue();
 			Assert::AreEqual(queue1.peek(), queue3.peek());
+		}
+
+		TEST_METHOD(IsEmptyDouble_ValidData_Success)
+		{
+			Queue::Queue<double> queue;
+			Assert::IsTrue(queue.IsEmpty());
 		}
 		TEST_METHOD(EnqueueString_ValidData_Success)
 		{
@@ -241,6 +253,12 @@ namespace Tests
 			queue1.dequeue();
 			queue3.dequeue();
 			Assert::AreEqual(queue1.peek(), queue3.peek());
+		}
+
+		TEST_METHOD(IsEmptyString_ValidData_Success)
+		{
+			Queue::Queue < std:: string > queue;
+			Assert::IsTrue(queue.IsEmpty());
 		}
 
 		TEST_METHOD(EnqueueVector_ValidData_Success)
@@ -368,6 +386,12 @@ namespace Tests
 			queue1.dequeue();
 			queue3.dequeue();
 			Assert::IsTrue(queue1.peek() == queue3.peek());
+		}
+
+		TEST_METHOD(IsEmptyVector_ValidData_Success)
+		{
+			Queue::Queue < Vector::Vector> queue;
+			Assert::IsTrue(queue.IsEmpty());
 		}
 		
 	};

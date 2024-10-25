@@ -2,12 +2,7 @@
 #include "Point.h"
 #include "cmath"
 
-Point::Point::Point(const double abscissa, const double ordinate, const double applicate) : x{ abscissa }, y{ ordinate }, z{ applicate }
-{
-	x = abscissa;
-	y = ordinate;
-	z = applicate;
-}
+Point::Point::Point(const double abscissa, const double ordinate, const double applicate) : x{ abscissa }, y{ ordinate }, z{ applicate } {}
 
 bool Point::Point::operator==(const Point& point) const
 {
